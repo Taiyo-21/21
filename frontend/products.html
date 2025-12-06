@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Добавить товар</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Навигация -->
+  <nav id="main-nav">
+    <ul>
+      <li><a href="/frontend/index.html">Главная</a></li>
+      <li><a href="/frontend/collection.html">Коллекции</a></li>
+      <li><a href="/frontend/orders.html">Заказы</a></li>
+      <li class="admin-only"><a href="/frontend/product.html">Добавить товар</a></li>
+      <li id="logout-li" class="right"><a href="#" onclick="logout()">Выйти</a></li>
+      <li id="login-status" class="right"></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Добавить новый товар</h1>
+
+    <form id="add-product-form">
+      <label>Название:</label>
+      <input type="text" id="product-name" required />
+
+      <br />
+
+      <label>Описание:</label>
+      <textarea id="product-description" required></textarea>
+
+      <br />
+
+      <label>Цена:</label>
+      <input type="number" id="product-price" step="0.01" required />
+
+      <br />
+
+      <label>Дата:</label>
+      <input type="date" id="product-date" required />
+
+      <br />
+
+      <button type="submit">Добавить товар</button>
+    </form>
+
+    <h2>Все товары</h2>
+    <div id="products-container">Загрузка товаров...</div>
+  </div>
+
+  <!-- Подключаем модули -->
+  <script type="module" src="/frontend/js/auth.js"></script>
+  <script type="module" src="/frontend/js/products-page.js"></script>
+
+  <!-- === Уведомления (только контейнер) === -->
+  <div id="notification-container"></div>
+
+</body>
+</html>

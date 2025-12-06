@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Войти</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Навигация -->
+  <nav id="main-nav">
+    <ul>
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="collection.html">Коллекции</a></li>
+      <li><a href="orders.html">Заказы</a></li>
+      <li class="active"><a href="register.html">Регистрация</a></li>
+      <li class="admin-only hidden"><a href="products.html">Добавить товар</a></li>
+      <li id="logout-li" class="right"><a href="#" onclick="logout()">Выйти</a></li>
+      <li id="login-status" class="right"></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Войти</h1>
+
+    <!-- Форма входа -->
+    <form class="auth-form" id="login-form">
+      <label for="username">Имя пользователя:</label>
+      <input type="text" id="username" placeholder="Введите имя пользователя" required />
+
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" placeholder="Введите пароль" required />
+
+      <button type="submit">Войти</button>
+    </form>
+
+    <p id="status" style="color: red;"></p>
+  </div>
+
+  <!-- === Уведомления (только контейнер) === -->
+  <div id="notification-container"></div>
+
+  <!-- Подключаем JS -->
+  <script src="/frontend/js/notification.js" type="module"></script>
+  <script src="/frontend/js/auth.js" type="module"></script>
+  <script src="/frontend/js/login-page.js" type="module"></script>
+
+</body>
+</html>

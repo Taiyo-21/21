@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Коллекции</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Навигация -->
+  <nav>
+    <ul id="main-nav">
+      <li><a href="/frontend/index.html">Главная</a></li>
+      <li class="active"><a href="/frontend/collection.html">Коллекции</a></li>
+      <li><a href="/frontend/orders.html">Заказы</a></li>
+      <li class="admin-only hidden"><a href="/frontend/product.html">Добавить товар</a></li>
+      <li id="logout-li" class="right"><a href="#" onclick="logout()">Выйти</a></li>
+      <li id="login-status" class="right">Вы вошли как <span id="username"></span></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Товары на день</h1>
+
+    <!-- Форма выбора даты -->
+    <form id="date-form">
+      <label for="filter-date">Выберите дату:</label>
+      <input type="date" id="filter-date" required />
+      <button type="submit">Показать коллекцию</button>
+    </form>
+
+    <!-- Контейнер для отображения коллекций -->
+    <div id="collection-container">Загрузка коллекций...</div>
+  </div>
+
+  <!-- Подключаем JS -->
+  <script type="module" src="/frontend/js/auth.js"></script>
+  <script type="module" src="/frontend/js/collection-page.js"></script>
+
+  <!-- === Уведомления (только контейнер) === -->
+  <div id="notification-container"></div>
+
+</body>
+</html>
